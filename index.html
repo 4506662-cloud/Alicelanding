@@ -690,8 +690,8 @@ async function generateMetaphor() {
     clearInterval(loadingInterval);
     document.getElementById('loading').classList.remove('visible');
 
-    if (data.content && data.content.length > 0) {
-      const fullText = data.content.map(b => b.text || '').join('').trim();
+    if (data.choices && data.choices.length > 0) {
+      const fullText = (data.choices[0].message.content || '').trim();
       
       // Split metaphor and source reference
       const parts = fullText.split(/\n+/);
